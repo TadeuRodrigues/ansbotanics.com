@@ -99,8 +99,7 @@ jQuery(document).ready(function($){
                 </div>
                 </div>
                 <h4><a href="<?php the_permalink();?>"><?php the_title();?></a></h4>
-                <p><?php echo excerpt(12);?></p>
-                <?php $portfolio_readmore = get_option('ecobiz_portfolio_readmore'); ?>
+                <p><?php echo excerpt(8);?></p>
               </div>
             </li>
           <?php endwhile;?>
