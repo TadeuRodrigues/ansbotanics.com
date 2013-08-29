@@ -99,7 +99,7 @@ jQuery(document).ready(function($){
                 </div>
                 </div>
                 <h4><a href="<?php the_permalink();?>"><?php the_title();?></a></h4>
-                <p><?php echo excerpt(8);?></p>
+                <p><?php echo excerpt(6);?></p>
               </div>
             </li>
           <?php endwhile;?>
