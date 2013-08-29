@@ -99,8 +99,8 @@ jQuery(document).ready(function($){
                 </div>
                 </div>
                 <h4><a href="<?php the_permalink();?>"><?php the_title();?></a></h4>
+                <p><?php echo excerpt(12);?></p>
                 <?php $portfolio_readmore = get_option('ecobiz_portfolio_readmore'); ?>
-                <a href="<?php the_permalink();?>" class="button"><span><?php echo $portfolio_readmore ? $portfolio_readmore : __('VIEW DETAIL ','ecobiz');?><img src="<?php echo get_template_directory_uri();?>/images/arrow_grey.png" alt="" class="readmore"/></span></a>
               </div>
             </li>
           <?php endwhile;?>
