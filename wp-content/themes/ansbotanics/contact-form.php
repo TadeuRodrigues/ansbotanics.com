@@ -36,19 +36,6 @@ Template Name: Contact Form
       <div class="center">
         <!-- Full Width Wrapper -->
         <div class="maincontent-full">
-          <!-- Contact Form -->
-          <div id="conctactright">
-            <ul class="contactinfo">
-              <li><strong>Shanghai Office:</strong></li>
-              <li>
-              Room 605, Bldg 1, No.1062 East Daming Rd.,Hongkou Dist.,Shanghai, China</li>
-              <li><strong>Phone</strong> : +86 21 35013960-808</li>
-              <li><strong>Email</strong> : <a href="mailto: info@ansbotanics.com "> info@ansbotanics.com </a><br>
-              <strong>Website</strong> : <a href="http://ansbotancis.com">http://ansbotancis.com</a></li>
-            </ul>
-            <div class="clear"></div>
-          </div>
-          <!-- Contact Form End -->
 
           <!-- Contact Address -->
           <div id="contactleft">
@@ -67,6 +54,20 @@ Template Name: Contact Form
             <div class="clear"></div>
           </div>
           <!-- Contact Address End -->
+
+          <!-- Contact Form -->
+          <div id="conctactright">
+            <ul class="contactinfo">
+              <li><strong>Shanghai Office:</strong></li>
+              <li>
+              Room 605, Bldg 1, No.1062 East Daming Rd.,Hongkou Dist.,Shanghai, China</li>
+              <li><strong>Phone</strong> : +86 21 35013960-808</li>
+              <li><strong>Email</strong> : <a href="mailto: info@ansbotanics.com "> info@ansbotanics.com </a><br>
+              <strong>Website</strong> : <a href="http://ansbotancis.com">http://ansbotancis.com</a></li>
+            </ul>
+            <div class="clear"></div>
+          </div>
+          <!-- Contact Form End -->
 
         </div>
         <!-- Full Width Wrapper End -->
