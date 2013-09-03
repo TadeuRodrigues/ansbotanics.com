@@ -41,6 +41,7 @@ Template Name: Contact Form
           <div id="conctactleft">
 
             <ul class="contactinfo">
+              <li><strong>ANS Botanics Limited</strong></li>
               <li><strong>Guilin Office:</strong></li>
               <li>
               <?php echo $info_address ? stripslashes($info_address) : "
@@ -58,6 +59,7 @@ Template Name: Contact Form
           <!-- Contact Form -->
           <div id="contactright">
             <ul class="contactinfo">
+              <li><strong>ANS Botanics Limited</strong></li>
               <li><strong>Shanghai Office:</strong></li>
               <li>
               Room 605, Bldg 1, No.1062 East Daming Rd.,Hongkou Dist.,Shanghai, China</li>
