@@ -38,7 +38,7 @@ Template Name: Contact Form
         <div class="maincontent-full">
 
           <!-- Contact Address -->
-          <div id="contactleft">
+          <div id="conctactleft">
 
             <ul class="contactinfo">
               <li><strong>Guilin Office:</strong></li>
@@ -56,7 +56,7 @@ Template Name: Contact Form
           <!-- Contact Address End -->
 
           <!-- Contact Form -->
-          <div id="conctactright">
+          <div id="contactright">
             <ul class="contactinfo">
               <li><strong>Shanghai Office:</strong></li>
               <li>
