@@ -9,10 +9,7 @@
       ?>      
       <!-- Page Heading --> 
       <div id="page-heading">
-        <img src="<?php echo $heading_image ? $heading_image : get_template_directory_uri().'/images/page-heading1.jpg';?>" alt="" />
-        <div class="heading-text<?php if ($bgtext_heading_position =="right") echo '-right';?>">
-          <h3>Portfolio</h3>
-        </div>
+        <img src="http://ansbotanics.com/wp-content/uploads/2011/05/four.jpg" alt="" />
       </div>
       <!-- Page Heading End -->
       <div class="clear"></div>
@@ -50,10 +47,61 @@
           <?php endif;?>
           
           <div class="clear"></div>
-          <div class="random-portfolio">
-          <?php imediapixel_random_portfolio($num=4,$title="Random Portfolio");?>
-          </div>
           
+          <div class="random-portfolio">
+            <h3 class="divider">Top Products</h3>
+            <ul class="portfolio-4col">
+              <li >
+                <div class="portfolio-blockimg3">
+                  <div class="portfolio-imgbox3">
+                    <div class="zoom">
+                      <a href="http://ansbotanics.com/wp-content/uploads/2013/08/Gotu-Kola-Extract-Asiaticoside.jpg" rel="prettyPhoto">
+                        <img src="http://ansbotanics.com/wp-content/themes/ansbotanics/timthumb.php?src=http://ansbotanics.com/wp-content/uploads/2013/08/Gotu-Kola-Extract-Asiaticoside.jpg&amp;h=86&amp;w=196&amp;zc=1" class="boximg-pad fade" alt="" /></a>
+                    </div>
+                  </div>
+                  <h4><a href="http://ansbotanics.com/?portfolio=gotu-kola-extract-asiaticoside-10-95hplc">Gotu Kola Extract</a></h4>
+                </div>
+              </li>
+
+              <li >
+                <div class="portfolio-blockimg3">
+                  <div class="portfolio-imgbox3">
+                    <div class="zoom">
+                      <a href="http://ansbotanics.com/wp-content/uploads/2013/08/Olive-Leaf-Extract.jpg" rel="prettyPhoto">
+                        <img src="http://ansbotanics.com/wp-content/themes/ansbotanics/timthumb.php?src=http://ansbotanics.com/wp-content/uploads/2013/08/Olive-Leaf-Extract.jpg&amp;h=86&amp;w=196&amp;zc=1" class="boximg-pad fade" alt="" /></a>
+                    </div>
+                  </div>
+                  <h4><a href="http://ansbotanics.com/?portfolio=olive-leaf-extract">Olive Leaf Extract</a></h4>
+                </div>
+              </li>
+
+              <li >
+                <div class="portfolio-blockimg3">
+                  <div class="portfolio-imgbox3">
+                    <div class="zoom">
+                      <a href="http://ansbotanics.com/wp-content/uploads/2013/08/Garlic-Extract.jpg" rel="prettyPhoto">
+                        <img src="http://ansbotanics.com/wp-content/themes/ansbotanics/timthumb.php?src=http://ansbotanics.com/wp-content/uploads/2013/08/Garlic-Extract.jpg&amp;h=86&amp;w=196&amp;zc=1" class="boximg-pad fade" alt="" /></a>
+                    </div>
+                  </div>
+                  <h4><a href="http://ansbotanics.com/?portfolio=garlic-extract-allicin-0-5-hplc">Garlic Extract</a></h4>
+                </div>
+              </li>
+
+              <li class="last">
+                <div class="portfolio-blockimg3">
+                  <div class="portfolio-imgbox3">
+                    <div class="zoom">
+                      <a href="http://ansbotanics.com/wp-content/uploads/2013/08/Pomegranate-Hull-Extract-Ellagic-Acid.jpg" rel="prettyPhoto">
+                        <img src="http://ansbotanics.com/wp-content/themes/ansbotanics/timthumb.php?src=http://ansbotanics.com/wp-content/uploads/2013/08/Pomegranate-Hull-Extract-Ellagic-Acid.jpg&amp;h=86&amp;w=196&amp;zc=1" class="boximg-pad fade" alt="" /></a>
+                    </div>
+                  </div>
+                  <h4><a href="http://ansbotanics.com/?portfolio=pomegranate-hull-extract">Pomegranate Hull Extract Ellagic</a></h4>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+
         </div>
         <!-- Main Content Wrapper End -->
     

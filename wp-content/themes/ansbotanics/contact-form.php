@@ -59,13 +59,12 @@ Template Name: Contact Form
           <!-- Contact Form -->
           <div id="contactright">
             <ul class="contactinfo">
-              <li><strong>ANS Botanics Limited</strong></li>
-              <li><strong>Shanghai Office:</strong></li>
+              <li><strong>World Speed Group</strong></li>
+              <li><strong>Hongkong Office:</strong></li>
               <li>
-              Room 605, Bldg 1, No.1062 East Daming Rd.,Hongkou Dist.,Shanghai, China</li>
-              <li><strong>Phone</strong> : +86 21 35013960-808</li>
-              <li><strong>Email</strong> : <a href="mailto: info@ansbotanics.com "> info@ansbotanics.com </a><br>
-              <strong>Website</strong> : <a href="http://ansbotancis.com">http://ansbotancis.com</a></li>
+              Unit 04, 7/F, Bright Way Tower, No.33 Mong Kok Road, Kowloon, HK.</li>
+	      <li><strong>Shanghai Office:</strong></li>
+	      <li>Room 605, Bldg 1, No.1062 East Daming Rd.,Hongkou Dist.,Shanghai, China
             </ul>
             <div class="clear"></div>
           </div>

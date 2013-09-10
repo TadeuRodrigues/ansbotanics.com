@@ -15,10 +15,6 @@ Template Name: Portfolio 4 Columns
       <!-- Page Heading --> 
       <div id="page-heading">
         <img src="<?php echo $heading_image ? $heading_image : get_template_directory_uri().'/images/page-heading3.jpg';?>" alt="" />
-        <div class="heading-text<?php if ($bgtext_heading_position =="right") echo '-right';?>">
-          <h3><?php the_title();?></h3>
-          <p><?php echo $page_short_desc;?></p>
-        </div>
       </div>
       <!-- Page Heading End -->
       <div class="clear"></div>
@@ -49,16 +45,7 @@ Template Name: Portfolio 4 Columns
             ?>
             <li <?php if ($counter %4 == 0) echo 'class="last"';?>>
               <div class="portfolio-blockimg3">
-                <div class="portfolio-imgbox3">
-                <div class="<?php if ($portfolio_type == "image") echo 'zoom'; else echo 'play';?>">
-                  <?php if (function_exists('has_post_thumbnail') && has_post_thumbnail()) {?>
-                  <a href="<?php echo ($pf_link) ? $pf_link : thumb_url();?>" rel="prettyPhoto"><img src="<?php echo get_template_directory_uri();?>/timthumb.php?src=<?php echo thumb_url();?>&amp;h=86&amp;w=196&amp;zc=1" class="boximg-pad fade" alt="" /></a>
-                  <?php } ?>
-                </div>
-                </div>
                 <h4><a href="<?php the_permalink();?>"><?php the_title();?></a></h4>
-                <p><?php echo excerpt(12);?></p>
-                <a href="<?php the_permalink();?>" class="button"><span><?php echo __('VIEW DETAIL ','ecobiz');?><img src="<?php echo get_template_directory_uri();?>/images/arrow_grey.png" alt="" class="readmore"/></span></a>     
               </div>
             </li>            
           <?php endwhile;?>
