@@ -10,10 +10,6 @@
       <!-- Page Heading --> 
       <div id="page-heading">
         <img src="<?php echo $heading_image ? $heading_image : get_template_directory_uri().'/images/page-heading1.jpg';?>" alt="" />
-        <div class="heading-text<?php if ($bgtext_heading_position =="right") echo '-right';?>">
-          <h3><?php the_title();?></h3>
-          <p><?php echo $page_short_desc;?></p>
-        </div>
       </div>
       <!-- Page Heading End -->
       <div class="clear"></div>
