@@ -37,7 +37,6 @@
     			 $portfolio_page = get_option('ecobiz_portfolio_page');
     			 $portfolio_pid = get_page_by_title($portfolio_page);
     			 ?>
-           <li><a class="<?php if (!get_query_var('portfolio_category')) echo 'current'; ?>" href="<?php echo get_page_link($portfolio_pid->ID);?>"><?php echo __('All','ecobiz');?></a></li>
           	<?php  
             $categories = get_categories('taxonomy=portfolio_category&orderby=ID&title_li=&hide_empty=0');
             foreach ($categories as $category) { 
@@ -54,6 +53,9 @@
           <ul class="portfolio-4col">
           <?php 
           $counter = 0;
+	  $portfolio_items_num  = (get_option('ecobiz_portfolio_items_num')) ? get_option('ecobiz_portfolio_items_num') : 200;
+          $portfolio_order = (get_option('ecobiz_portfolio_order')) ? get_option('ecobiz_portfolio_order') : "date";
+          query_posts($query_string . '&orderby='.$portfolio_order.'&showposts='.$portfolio_items_num.'&order=desc');
           while ( have_posts() ) : the_post();
           $counter++;
             $pf_link = get_post_meta($post->ID, '_portfolio_link', true );

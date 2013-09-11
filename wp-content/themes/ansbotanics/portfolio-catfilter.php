@@ -32,7 +32,6 @@ Template Name: Portfolio 4 Cols Category Filter
     			 $portfolio_page = get_option('ecobiz_portfolio_page');
     			 $portfolio_pid = get_page_by_title($portfolio_page);
     			 ?>
- 			      <li><a class="<?php if (!get_query_var('portfolio_category')) echo 'current'; ?>" href="<?php echo get_page_link($portfolio_pid->ID);?>"><?php echo __('All','ecobiz');?></a></li>
           	<?php  
             $categories = get_categories('taxonomy=portfolio_category&orderby=ID&title_li=&hide_empty=0');
             foreach ($categories as $category) { 
