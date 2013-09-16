@@ -9,19 +9,7 @@
       ?>      
       <!-- Page Heading --> 
       <div id="page-heading">
-        <img src="<?php echo $heading_image ? $heading_image : get_template_directory_uri().'/images/page-heading3.jpg';?>" alt="" />
-        <div class="heading-text<?php if ($bgtext_heading_position =="right") echo '-right';?>">
-          <h3>
-            <?php 
-            $categories = get_categories('taxonomy=portfolio_category&orderby=ID&title_li=&hide_empty=0');
-            foreach ($categories as $category) { 
-              if ($category->slug == get_query_var($category->taxonomy)) {
-                echo $category->name;
-              }
-            }
-            ?>
-          </h3>
-        </div>
+        <img src="http://ansbotanics.com/wp-content/uploads/2011/05/four.jpg" alt="" />
       </div>
       <!-- Page Heading End -->
       <div class="clear"></div>
@@ -55,7 +43,7 @@
           $counter = 0;
 	  $portfolio_items_num  = (get_option('ecobiz_portfolio_items_num')) ? get_option('ecobiz_portfolio_items_num') : 200;
           $portfolio_order = (get_option('ecobiz_portfolio_order')) ? get_option('ecobiz_portfolio_order') : "date";
-          query_posts($query_string . '&orderby='.$portfolio_order.'&showposts='.$portfolio_items_num.'&order=desc');
+          query_posts($query_string . '&orderby='.$portfolio_order.'&showposts='.$portfolio_items_num.'&order=ASC');
           while ( have_posts() ) : the_post();
           $counter++;
             $pf_link = get_post_meta($post->ID, '_portfolio_link', true );
