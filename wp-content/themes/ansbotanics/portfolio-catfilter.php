@@ -27,21 +27,13 @@ Template Name: Portfolio 4 Cols Category Filter
           <div class="clear"></div>
           <br />
           
-          <ul id="filter">
-          <?php
-    			 $portfolio_page = get_option('ecobiz_portfolio_page');
-    			 $portfolio_pid = get_page_by_title($portfolio_page);
-    			 ?>
-          	<?php  
-            $categories = get_categories('taxonomy=portfolio_category&orderby=ID&title_li=&hide_empty=0');
-            foreach ($categories as $category) { 
-            $termlink = get_term_link($category->slug,$category->taxonomy);
-            ?>
-              <li><a  class="<?php if (get_query_var($category->taxonomy) == $category->slug) echo 'current'; ?>" href="<?php echo $termlink;?>"><?php echo $category->name;?></a></li>
-              <?php
-            }
-            ?>
-          </ul>
+	  <ul id="filter">
+          	<li><a class="" href="http://ansbotanics.com/?portfolio_category=new-products">Top Products</a></li>
+                <li><a class="" href="http://ansbotanics.com/?portfolio_category=botanical-extract">Botanical Extract</a></li>
+                <li><a class="" href="http://ansbotanics.com/?portfolio_category=amino-acids">Amino Acids</a></li>
+                <li><a class="" href="http://ansbotanics.com/?portfolio_category=biochemical">Biochemical</a></li>
+                <li><a class="" href="http://ansbotanics.com/?portfolio_category=apis">APIs</a></li>
+           </ul>
           
           <div class="clear"></div>
           <ul class="portfolio-4col">

@@ -55,8 +55,8 @@
                 <div class="portfolio-blockimg3">
                   <div class="portfolio-imgbox3">
                     <div class="zoom">
-                      <a href="http://ansbotanics.com/wp-content/uploads/2013/08/Gotu-Kola-Extract-Asiaticoside.jpg" rel="prettyPhoto">
-                        <img src="http://ansbotanics.com/wp-content/themes/ansbotanics/timthumb.php?src=http://ansbotanics.com/wp-content/uploads/2013/08/Gotu-Kola-Extract-Asiaticoside.jpg&amp;h=86&amp;w=196&amp;zc=1" class="boximg-pad fade" alt="" /></a>
+                      <a href="http://ansbotanics.com/wp-content/uploads/2013/09/Gotu-Kola-Extract.jpg" rel="prettyPhoto">
+                        <img src="http://ansbotanics.com/wp-content/themes/ansbotanics/timthumb.php?src=http://ansbotanics.com/wp-content/uploads/2013/09/Gotu-Kola-Extract.jpg&amp;h=86&amp;w=196&amp;zc=1" class="boximg-pad fade" alt="" /></a>
                     </div>
                   </div>
                   <h4><a href="http://ansbotanics.com/?portfolio=gotu-kola-extract-asiaticoside-10-95hplc">Gotu Kola Extract</a></h4>
@@ -67,8 +67,8 @@
                 <div class="portfolio-blockimg3">
                   <div class="portfolio-imgbox3">
                     <div class="zoom">
-                      <a href="http://ansbotanics.com/wp-content/uploads/2013/08/Olive-Leaf-Extract.jpg" rel="prettyPhoto">
-                        <img src="http://ansbotanics.com/wp-content/themes/ansbotanics/timthumb.php?src=http://ansbotanics.com/wp-content/uploads/2013/08/Olive-Leaf-Extract.jpg&amp;h=86&amp;w=196&amp;zc=1" class="boximg-pad fade" alt="" /></a>
+                      <a href="http://ansbotanics.com/wp-content/uploads/2013/09/Olive-Leaf-Extract-.jpg" rel="prettyPhoto">
+                        <img src="http://ansbotanics.com/wp-content/themes/ansbotanics/timthumb.php?src=http://ansbotanics.com/wp-content/uploads/2013/09/Olive-Leaf-Extract-.jpg&amp;h=86&amp;w=196&amp;zc=1" class="boximg-pad fade" alt="" /></a>
                     </div>
                   </div>
                   <h4><a href="http://ansbotanics.com/?portfolio=olive-leaf-extract">Olive Leaf Extract</a></h4>
@@ -79,8 +79,8 @@
                 <div class="portfolio-blockimg3">
                   <div class="portfolio-imgbox3">
                     <div class="zoom">
-                      <a href="http://ansbotanics.com/wp-content/uploads/2013/08/Garlic-Extract.jpg" rel="prettyPhoto">
-                        <img src="http://ansbotanics.com/wp-content/themes/ansbotanics/timthumb.php?src=http://ansbotanics.com/wp-content/uploads/2013/08/Garlic-Extract.jpg&amp;h=86&amp;w=196&amp;zc=1" class="boximg-pad fade" alt="" /></a>
+                      <a href="http://ansbotanics.com/wp-content/uploads/2013/09/Garlic-Extract.jpg" rel="prettyPhoto">
+                        <img src="http://ansbotanics.com/wp-content/themes/ansbotanics/timthumb.php?src=http://ansbotanics.com/wp-content/uploads/2013/09/Garlic-Extract.jpg&amp;h=86&amp;w=196&amp;zc=1" class="boximg-pad fade" alt="" /></a>
                     </div>
                   </div>
                   <h4><a href="http://ansbotanics.com/?portfolio=garlic-extract-allicin-0-5-hplc">Garlic Extract</a></h4>
@@ -91,8 +91,8 @@
                 <div class="portfolio-blockimg3">
                   <div class="portfolio-imgbox3">
                     <div class="zoom">
-                      <a href="http://ansbotanics.com/wp-content/uploads/2013/08/Pomegranate-Hull-Extract-Ellagic-Acid.jpg" rel="prettyPhoto">
-                        <img src="http://ansbotanics.com/wp-content/themes/ansbotanics/timthumb.php?src=http://ansbotanics.com/wp-content/uploads/2013/08/Pomegranate-Hull-Extract-Ellagic-Acid.jpg&amp;h=86&amp;w=196&amp;zc=1" class="boximg-pad fade" alt="" /></a>
+                      <a href="http://ansbotanics.com/wp-content/uploads/2013/09/Pomegranate-Hull-Extract.jpg" rel="prettyPhoto">
+                        <img src="http://ansbotanics.com/wp-content/themes/ansbotanics/timthumb.php?src=http://ansbotanics.com/wp-content/uploads/2013/09/Pomegranate-Hull-Extract.jpg&amp;h=86&amp;w=196&amp;zc=1" class="boximg-pad fade" alt="" /></a>
                     </div>
                   </div>
                   <h4><a href="http://ansbotanics.com/?portfolio=pomegranate-hull-extract">Pomegranate Hull Extract Ellagic</a></h4>
