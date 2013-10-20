@@ -44,9 +44,10 @@ Template Name: Contact Form
               Room 605, Bldg 1, No.1062 East Daming Rd.,Hongkou Dist.,<br />
             Shanghai,<br />
             China";?></li>
-              <li><strong><?php echo __('Phone','ecobiz');?></strong> : <?php echo $info_phone ? $info_phone : "+62 525625";?></li>
-              <li><strong><?php echo __('Email','ecobiz');?></strong> : <a href="mailto:<?php echo $info_email ? $info_email : "#";?>"><?php echo $info_email ? $info_email : "info@ansbotanics.com";?></a><br />
-              <strong><?php echo __('Website','ecobiz');?></strong> : <a href="<?php echo $info_website ? $info_website : "#";?>"><?php echo $info_website ? $info_website : "http://ansbotancis.com";?></a></li>
+              <li><strong><?php echo __('Tel/Fax','ecobiz');?></strong> : <?php echo $info_phone ? $info_phone : "+62 525625";?></li>
+              <li><strong><?php echo __('Email','ecobiz');?></strong> : <a href="mailto:<?php echo $info_email ? $info_email : "#";?>"><?php echo $info_email ? $info_email : "info@ansbotanics.com  - General";?></a>- General<br />
+              <a style="padding-left: 40px;" href="mailto:<?php echo $sales ? $sales_email : "#";?>"><?php echo $sales_email ? $sales_email : "sales@ansbotanics.com";?></a>- Sales</li>
+              <li><strong><?php echo __('Website','ecobiz');?></strong> : <a href="<?php echo $info_website ? $info_website : "#";?>"><?php echo $info_website ? $info_website : "http://ansbotancis.com";?></a></li>
             </ul>
             <div class="clear"></div>
           </div>
