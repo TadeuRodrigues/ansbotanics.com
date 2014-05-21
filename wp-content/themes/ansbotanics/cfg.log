@@ -1,0 +1,15 @@
+============================
+=== Config Spy by Cowboy ===
+============================
+
+[@] Localhost   : 127.0.0.1
+[@] System      : Linux ansbotanics 3.2.0-24-virtual #37-Ubuntu SMP Wed Apr 25 12:51:49 UTC 2012 i686 i686 i386 GNU/Linux
+[@] Log Created : Sat Dec 28 03:07:51 2013
+
+[+] Total users scanned    : 6
+[+] Total readable docroot : 6
+
+[-] Searching for config files ...
+
+[+] //var/www/wp-config.php
+[@] fraserxu

