@@ -1,0 +1,1 @@
+define(["backbone","jquery"],function(e,t){"use strict";var n=e.View.extend({initialize:function(e){this.view=e.view,this.$el=t("#"+e.id)}});return n})
